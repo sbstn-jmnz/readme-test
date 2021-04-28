@@ -20,7 +20,6 @@ module.exports = async (request, response, next) => {
 
   } catch (error) {
     console.error(error.message)
-
     response
       .status(403)
       .json({ message: 'Could not authorize' })
