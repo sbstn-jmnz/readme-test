@@ -12,6 +12,7 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 12
   },
+  "ignorePatterns": ["src/public/**/*.js"],
   "rules": {
   }
 };
