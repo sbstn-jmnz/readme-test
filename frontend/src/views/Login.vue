@@ -1,30 +1,32 @@
 <template>
   <v-main class="home">
-    <v-card width="400px" class="mx-auto my-auto">
+    <v-card width="400px" class="mx-auto mt-5">
       <v-card-title class="pb-0">
         <h1 class="mx-auto mb-5">Ingreso</h1>
       </v-card-title>
-      <v-form ref="form">
-        <v-text-field
-          v-model="email"
-          label="Correo"
-          prepend-icon="mdi-account-circle"
-          :rules="emailRules"
-          validate-on-blur
-          data-cy="username"
-        />
-        <v-text-field
-          v-model="password"
-          label="Contraseña"
-          :type="showPassword ? 'text' : 'password'"
-          :rules="passwordRules"
-          validate-on-blur
-          prepend-icon="mdi-lock"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"
-          data-cy="password"
-        />
-      </v-form>
+      <v-card-text>
+        <v-form ref="form">
+          <v-text-field
+            v-model="email"
+            label="Correo"
+            prepend-icon="mdi-account-circle"
+            :rules="emailRules"
+            validate-on-blur
+            data-cy="username"
+          />
+          <v-text-field
+            v-model="password"
+            label="Contraseña"
+            :type="showPassword ? 'text' : 'password'"
+            :rules="passwordRules"
+            validate-on-blur
+            prepend-icon="mdi-lock"
+            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="showPassword = !showPassword"
+            data-cy="password"
+          />
+        </v-form>
+      </v-card-text>
       <v-divider />
       <v-card-actions>
         <v-btn to="/registro" color="success"> Registro </v-btn>

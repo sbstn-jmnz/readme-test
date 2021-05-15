@@ -1,7 +1,7 @@
 <template>
   <v-main>
-    <h1>Productos</h1>
-    <section data-cy="products">
+    <h1 class="title-1 text-center my-5">Productos</h1>
+    <section class="mx-5">
       <v-row>
         <v-col
           v-for="product in products"
@@ -9,28 +9,21 @@
           cols="4"
           data-cy="product-item"
         >
-          <h3>{{ product.name }}</h3>
-          <v-img
+        <v-card
+          class="mx-auto"
+          max-width="400"
+        >
+        <v-img
             :src="product.image"
             lazy-src="https://via.placeholder.com/300"
             aspect-ratio="1"
-            class="grey lighten-2"
+            class="white--text  align-end"
+            height="200px"
           >
-            <template v-slot:placeholder>
-              <v-row
-                class="fill-height ma-0"
-                align="center"
-                justify="center"
-              >
-                <v-progress-circular
-                  indeterminate
-                  color="grey lighten-5"
-                ></v-progress-circular>
-              </v-row>
-            </template>
           </v-img>
-
-          <p>{{ product.description }}</p>
+          <v-card-title>{{ product.name }}</v-card-title>
+          <v-card-text>{{ product.description }}</v-card-text>
+        </v-card>
         </v-col>
       </v-row>
     </section>
